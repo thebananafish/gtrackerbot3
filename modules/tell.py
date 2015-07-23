@@ -63,7 +63,8 @@ def f_remind(jenni, input):
     #    return jenni.say('Please tell me who and what to tell people.')
 
     # @@ Multiple comma-separated tellees? Cf. Terje, #swhack, 2006-04-15
-    if input.group() and (input.group()).startswith('.tell'):
+    iG = input.group()
+    if iG and (iG.startswith('.tell') or iG.startswith('.Tell')):
         verb = 'tell'.encode('utf-8')
         line = input.groups()
         line_txt = line[1].split()
